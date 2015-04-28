@@ -16,6 +16,9 @@ if 'pub_key' not in settings.UPLOADCARE:
 if 'secret' not in settings.UPLOADCARE:
     raise ImproperlyConfigured('UPLOADCARE setting must have secret')
 
+if 'cdn_base' in settings.UPLOADCARE:
+    conf.cdn_base = settings.UPLOADCARE['cdn_base']
+
 conf.pub_key = settings.UPLOADCARE['pub_key']
 conf.secret = settings.UPLOADCARE['secret']
 
